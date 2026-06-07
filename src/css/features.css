@@ -1,7 +1,7 @@
 .features {
   padding: 64px 0;
-  background-image: image-set(url('../img/./features@1x.png') 1x,
-      url('../img//features@2x.png') 2x);
+  background-image: image-set(url('../img/features@1x.png') 1x,
+      url('../img/features@2x.png') 2x);
   background-position: center;
 }
 
@@ -54,9 +54,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.wrap-svg {
   border-radius: 18px;
   margin: 0 auto;
   margin-bottom: 14px;
