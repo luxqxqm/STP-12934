@@ -58,3 +58,28 @@ document.addEventListener('keydown', event => {
     closeMenu();
   }
 });
+
+const menuLinks = document.querySelectorAll('[data-menu-link]');
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+
+    const targetId = link.getAttribute('href');
+    const targetSection = document.querySelector(targetId);
+
+    menuBackdrop.dataset.visible = 'close';
+    menuOpenBtn.setAttribute('aria-expanded', 'false');
+
+    unlockPageScroll();
+
+    if (targetSection) {
+      requestAnimationFrame(() => {
+        targetSection.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      });
+    }
+  });
+});
